@@ -6,21 +6,21 @@ const calculator = {
     firstNumber: null,
     waitingForSecondNumber: false
 
-}
+};
 
 // Fungsi update angka di layar dan menghapus data pada kalkulator
 function updateDisplay() {
 
-    document.querySelector("#displayNumber").innerHTML = calculator.displayNumber;
+    document.querySelector("#displayNumber").innerText = calculator.displayNumber;
 
 }
 
 function clearCalculator() {
 
-    calculator.displayNumber = displayNumber,
-    calculator.operator = null,
-    calculator.firstNumber = null,
-    calculator.waitingForSecondNumber = false
+    calculator.displayNumber = "0";
+    calculator.operator = null;
+    calculator.firstNumber = null;
+    calculator.waitingForSecondNumber = false;
 
 }
 
@@ -39,6 +39,62 @@ function inputDigit(digit) {
 
 }
 
+// Fungsi operator
+function inverseNumber() {
+
+    if(calculator.displayNumber === "0") {
+
+        return;
+
+    }
+
+    calculator.displayNumber = calculator.displayNumber * -1;
+
+};
+
+function handleOperator(operator) {
+
+    if(!calculator.waitingForSecondNumber) {
+
+        calculator.operator = operator;
+        calculator.waitingForSecondNumber = true;
+        calculator.firstNumber = calculator.displayNumber;
+
+        calculator.displayNumber = "0"
+
+    } else {
+
+        alert("Operator sudah ditetapkan");
+
+    };
+
+};
+
+function performCalculation() {
+
+    if(calculator.firstNumber == null || calculator.operator == null) {
+
+        alert("Anda belum menetapkan operator");
+        return;
+
+    };
+
+    let result = 0;
+
+    if(calculator.opertator === "+") {
+
+        result = parseInt(calculator.firstNumber) + parseInt(calculator.displayNumber);
+
+    } else {
+
+        result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
+
+    };
+
+    calculator.displayNumber = result;
+
+}
+
 // Menginisialisasi seluruh elemen button dan memberikan event
 const buttons = document.querySelectorAll(".button");
 
@@ -53,10 +109,32 @@ for(let button of buttons) {
 
             clearCalculator();
             updateDisplay();
+            return;
 
-            return
-            
-        }
+        };
+
+        if(target.classList.contains("negative")) {
+
+            inverseNumber();
+            updateDisplay();
+            return;
+
+        };
+
+        if(target.classList.contains("equals")) {
+
+            performCalculation();
+            updateDisplay();
+            return;
+
+        };
+
+        if(target.classList.contains("operator")) {
+
+            handleOperator(target.innerText);
+            return;
+
+        };
     
         inputDigit(target.innerText);
         updateDisplay();
