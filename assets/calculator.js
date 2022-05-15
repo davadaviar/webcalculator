@@ -27,7 +27,15 @@ function clearCalculator() {
 // Fungsi memasukkan digit angka ke displayNumber
 function inputDigit(digit) {
 
-    calculator.displayNumber += digit;  // Teori operator x += y  -> x = x + y
+    if(calculator.displayNumber === "0") {
+
+        calculator.displayNumber = digit;
+
+    } else {
+
+        calculator.displayNumber += digit;
+        
+    }
 
 }
 
@@ -46,6 +54,8 @@ for(let button of buttons) {
     });
 
 }
+
+
 
 
 
