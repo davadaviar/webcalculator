@@ -31,3 +31,21 @@ function inputDigit(digit) {
 
 }
 
+// Menginisialisasi seluruh elemen button dan memberikan event
+const buttons = document.querySelectorAll(".button");
+
+for(let button of buttons) {
+
+    button.addEventListener('click', function(event) {
+    
+        // Mendapatkan objek elemen yg diklik
+        const target = event.target;
+    
+        inputDigit(target.innerText);
+        updateDispaly();
+    });
+
+}
+
+
+
