@@ -9,7 +9,7 @@ const calculator = {
 }
 
 // Fungsi update angka di layar dan menghapus data pada kalkulator
-function updateDispaly() {
+function updateDisplay() {
 
     document.querySelector("#displayNumber").innerHTML = calculator.displayNumber;
 
@@ -34,7 +34,7 @@ function inputDigit(digit) {
     } else {
 
         calculator.displayNumber += digit;
-        
+
     }
 
 }
@@ -44,13 +44,23 @@ const buttons = document.querySelectorAll(".button");
 
 for(let button of buttons) {
 
-    button.addEventListener('click', function(event) {
+    button.addEventListener("click", function(event) {
     
         // Mendapatkan objek elemen yg diklik
         const target = event.target;
+
+        if(target.classList.contains("clear")) {
+
+            clearCalculator();
+            updateDisplay();
+
+            return
+            
+        }
     
         inputDigit(target.innerText);
-        updateDispaly();
+        updateDisplay();
+
     });
 
 }
