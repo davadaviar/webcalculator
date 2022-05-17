@@ -93,6 +93,19 @@ function performCalculation() {
 
     calculator.displayNumber = result;
 
+    const history = {
+
+        firstNumber: calculator.firstNumber,
+        secondNumber: calculator.secondNumber,
+        operator: calculator.operator,
+        result: result
+
+    }
+
+    putHistory(history);
+    calculator.displayNumber = result;
+    renderHistory();
+
 }
 
 // Menginisialisasi seluruh elemen button dan memberikan event
