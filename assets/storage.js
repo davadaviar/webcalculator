@@ -69,5 +69,8 @@ function renderHistory() {
         historyList.appendChild(row);
 
     };
-    
+
 }
+
+renderHistory();
+
