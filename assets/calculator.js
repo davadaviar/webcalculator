@@ -91,12 +91,10 @@ function performCalculation() {
 
     };
 
-    calculator.displayNumber = result;
-
     const history = {
 
         firstNumber: calculator.firstNumber,
-        secondNumber: calculator.secondNumber,
+        secondNumber: calculator.displayNumber,
         operator: calculator.operator,
         result: result
 

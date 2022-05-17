@@ -59,7 +59,7 @@ function renderHistory() {
 
     for(let history of historyData) {
 
-        let row = document.createElement("tr");
+        let row = document.createElement('tr');
 
         row.innerHTML = "<td>" + history.firstNumber + "</td>";
         row.innerHTML = "<td>" + history.operator + "</td>";
