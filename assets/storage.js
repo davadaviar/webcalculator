@@ -40,7 +40,7 @@ function showHistory() {
 
     if(checkForStorage()) {
 
-        return JSON.parse(localStorage.getItem(CACHE_KEY) === null) || [];
+        return JSON.parse(localStorage.getItem(CACHE_KEY)) || [];
 
     } else {
 
