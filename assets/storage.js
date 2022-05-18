@@ -38,7 +38,7 @@ function putHistory(data) {
 
 function showHistory() {
 
-    if(checkForStorage()) {
+    if(checkForStorage) {
 
         return JSON.parse(localStorage.getItem(CACHE_KEY)) || [];
 
