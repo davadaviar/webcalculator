@@ -32,7 +32,7 @@ function putHistory(data) {
 
         localStorage.setItem(CACHE_KEY, JSON.stringify(historyData));
 
-    };
+    }
 
 }
 
@@ -46,7 +46,7 @@ function showHistory() {
 
         return [];
 
-    };
+    }
 
 }
 
@@ -68,7 +68,7 @@ function renderHistory() {
 
         historyList.appendChild(row);
 
-    };
+    }
 
 }
 
