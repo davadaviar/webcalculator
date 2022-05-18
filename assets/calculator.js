@@ -50,7 +50,7 @@ function inverseNumber() {
 
     calculator.displayNumber = calculator.displayNumber * -1;
 
-};
+}
 
 function handleOperator(operator) {
 
