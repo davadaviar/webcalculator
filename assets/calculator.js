@@ -6,7 +6,7 @@ const calculator = {
     firstNumber: null,
     waitingForSecondNumber: false
 
-};
+}
 
 // Fungsi update angka di layar dan menghapus data pada kalkulator
 function updateDisplay() {
@@ -65,9 +65,9 @@ function handleOperator(operator) {
 
         alert("Operator sudah ditetapkan");
 
-    };
+    }
 
-};
+}
 
 function performCalculation() {
 
@@ -76,7 +76,7 @@ function performCalculation() {
         alert("Anda belum menetapkan operator");
         return;
 
-    };
+    }
 
     let result = 0;
 
@@ -88,7 +88,7 @@ function performCalculation() {
 
         result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
 
-    };
+    }
 
     const history = {
 
@@ -121,7 +121,7 @@ for(let button of buttons) {
             updateDisplay();
             return;
 
-        };
+        }
 
         if(target.classList.contains("negative")) {
 
@@ -129,7 +129,7 @@ for(let button of buttons) {
             updateDisplay();
             return;
 
-        };
+        }
 
         if(target.classList.contains("equals")) {
 
@@ -137,19 +137,19 @@ for(let button of buttons) {
             updateDisplay();
             return;
 
-        };
+        }
 
         if(target.classList.contains("operator")) {
 
             handleOperator(target.innerText);
             return;
 
-        };
+        }
     
         inputDigit(target.innerText);
         updateDisplay();
 
-    });
+    })
 
 }
 
