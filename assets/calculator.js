@@ -1,7 +1,7 @@
 // Menyimpan data dan kondisi kalkulator
 const calculator = {
 
-    displayNumber: "0",
+    displayNumber: '0',
     operator: null,
     firstNumber: null,
     waitingForSecondNumber: false
@@ -17,7 +17,7 @@ function updateDisplay() {
 
 function clearCalculator() {
 
-    calculator.displayNumber = "0";
+    calculator.displayNumber = '0';
     calculator.operator = null;
     calculator.firstNumber = null;
     calculator.waitingForSecondNumber = false;
@@ -27,7 +27,7 @@ function clearCalculator() {
 // Fungsi memasukkan digit angka ke displayNumber
 function inputDigit(digit) {
 
-    if(calculator.displayNumber === "0") {
+    if(calculator.displayNumber === '0') {
 
         calculator.displayNumber = digit;
 
@@ -42,7 +42,7 @@ function inputDigit(digit) {
 // Fungsi operator
 function inverseNumber() {
 
-    if(calculator.displayNumber === "0") {
+    if(calculator.displayNumber === '0') {
 
         return;
 
@@ -59,7 +59,7 @@ function handleOperator(operator) {
         calculator.operator = operator;
         calculator.waitingForSecondNumber = true;
         calculator.firstNumber = calculator.displayNumber;
-        calculator.displayNumber = "0";
+        calculator.displayNumber = '0';
 
     } else {
 
@@ -110,12 +110,12 @@ const buttons = document.querySelectorAll(".button");
 
 for(let button of buttons) {
 
-    button.addEventListener("click", function(event) {
+    button.addEventListener('click', function(event) {
     
         // Mendapatkan objek elemen yg diklik
         const target = event.target;
 
-        if(target.classList.contains("clear")) {
+        if(target.classList.contains('clear')) {
 
             clearCalculator();
             updateDisplay();
@@ -123,7 +123,7 @@ for(let button of buttons) {
 
         }
 
-        if(target.classList.contains("negative")) {
+        if(target.classList.contains('negative')) {
 
             inverseNumber();
             updateDisplay();
@@ -131,7 +131,7 @@ for(let button of buttons) {
 
         }
 
-        if(target.classList.contains("equals")) {
+        if(target.classList.contains('equals')) {
 
             performCalculation();
             updateDisplay();
@@ -139,7 +139,7 @@ for(let button of buttons) {
 
         }
 
-        if(target.classList.contains("operator")) {
+        if(target.classList.contains('operator')) {
 
             handleOperator(target.innerText);
             return;
