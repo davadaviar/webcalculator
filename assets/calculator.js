@@ -59,8 +59,7 @@ function handleOperator(operator) {
         calculator.operator = operator;
         calculator.waitingForSecondNumber = true;
         calculator.firstNumber = calculator.displayNumber;
-
-        calculator.displayNumber = "0"
+        calculator.displayNumber = "0";
 
     } else {
 
